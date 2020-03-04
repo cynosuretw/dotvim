@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+unset_something () {
+    TMUX=''
+}
+
+
+main() {
+    unset_something
+}
+main
