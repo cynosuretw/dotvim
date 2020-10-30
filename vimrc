@@ -30,7 +30,8 @@ filetype off                   " required!
     "uber awesome syntax and errors highlighter
     " Plugin 'scrooloose/syntastic'
     " ale
-    Plugin 'w0rp/ale'
+    " Plugin 'w0rp/ale'
+    Plugin 'dense-analysis/ale'
     "T-H-E colorscheme
     Plugin 'altercation/vim-colors-solarized' 
     "So awesome, it should be illegal 
@@ -63,6 +64,10 @@ filetype off                   " required!
     Plugin 'junegunn/fzf.vim'
     "robotframwork"
     Plugin 'mfukar/robotframework-vim'
+    "Plugin 'https://github.com/nvie/vim-flake8'
+    Plugin 'pearofducks/ansible-vim'
+    "rust"
+    Plugin 'rust-lang/rust.vim'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -311,6 +316,10 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_enter = 1
 let g:ale_set_signs = 1
+" Check Python files with flake8.
+let g:ale_linters = {'python': ['flake8'], 'reStructuredText': ['rstcheck']}
+" Fix Python files with autopep8.
+let g:ale_fixers = {'python': ['remove_trailing_lines', 'trim_whitespace', 'autopep8']}
 " from http://0x3f.org/post/replace-syntastic-with-ale/
 " 普通模式下，sp前往上一個錯誤或警告，sn前往下一個錯誤或警告
 nmap sp <Plug>(ale_previous_wrap)
@@ -319,6 +328,8 @@ nmap sn <Plug>(ale_next_wrap)
 nmap <Leader>at :ALEToggle<CR>
 " 查看錯誤或警告的詳細信息
 nmap <Leader>ad :ALEDetail<CR>
+" Bind F8 to fixing problems with ALE
+nmap <F8> <Plug>(ale_fix)
 
 " ctrlP
 let g:ctrlp_working_path_mode = 'ra'
@@ -417,3 +428,5 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 set hidden
 nnoremap <Leader>bh :bprev<CR>
 nnoremap <Leader>bl :bnext<CR>
+
+nnoremap <F6> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
