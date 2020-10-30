@@ -27,3 +27,8 @@ MANUALLY INSTALL
 
         git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
         git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
+6. Install pip package for vim deoplete.nvim
+
+        pip3 install autopep8
+        pip3 install rstcheck #for reStructuredText
