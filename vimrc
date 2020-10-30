@@ -52,7 +52,7 @@ filetype off                   " required!
     Plugin 'https://github.com/kien/ctrlp.vim'
     Plugin 'https://github.com/easymotion/vim-easymotion'
     Plugin 'junkblocker/patchreview-vim'
-    "Plugin 'https://github.com/vim-scripts/gtags.vim'
+    Plugin 'https://github.com/vim-scripts/gtags.vim'
     Plugin 'nathanalderson/yang.vim'
     "codequery
     Plugin 'Shougo/unite.vim'
@@ -283,9 +283,9 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-augroup filetypedetect
-        au BufNewFile,BufRead *.cli      setfiletype cli
-augroup END
+" augroup filetypedetect
+"         au BufNewFile,BufRead *.cli      setfiletype cli
+" augroup END
 
 " signify
 " hunk jumping
@@ -419,14 +419,18 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "gtags
-"set csprg=gtags-cscope
-"cs add GTAGS
-"let s:command = "cs add GTAGS"
-"exe s:command
+set csprg=gtags-cscope
+cs add GTAGS
+let s:command = "cs add GTAGS"
+exe s:command
+"let Gtags_Auto_Map = 1
 
 "buftabline
 set hidden
 nnoremap <Leader>bh :bprev<CR>
 nnoremap <Leader>bl :bnext<CR>
 
+" show indent
 nnoremap <F6> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
+
+nnoremap / ms/
