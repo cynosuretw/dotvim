@@ -400,6 +400,8 @@ let g:ctrlp_user_command = {
 " "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 let g:deoplete#enable_at_startup = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " Enable omni completion.
