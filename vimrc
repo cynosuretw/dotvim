@@ -11,75 +11,69 @@
 
 set nocompatible               " be iMproved
 filetype off                   " required!
-" Setting up Vundle - the vim plugin bundler
+" Setting up vim plugins - the vim plugin bundler
     let iCanHazVundle=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        "silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-        silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
         let iCanHazVundle=0
     endif
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#begin()
-    "Bundle 'gmarik/vundle'
-    Plugin 'VundleVim/Vundle.vim'
+    call plug#begin('~/.vim/plugged')
     "Add your bundles here
     "uber awesome syntax and errors highlighter
-    " Plugin 'scrooloose/syntastic'
+    " Plug 'scrooloose/syntastic'
     " ale
-    " Plugin 'w0rp/ale'
-    Plugin 'dense-analysis/ale'
+    " Plug 'w0rp/ale'
+    Plug 'dense-analysis/ale'
     "T-H-E colorscheme
-    Plugin 'altercation/vim-colors-solarized' 
+    Plug 'altercation/vim-colors-solarized' 
     "So awesome, it should be illegal 
-    "Plugin 'https://github.com/tpope/vim-fugitive' 
-    Plugin 'bling/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    " Plugin 'plasticboy/vim-markdown' 
-    " Plugin 'vim-scripts/AutoComplPop' 
-    " Plugin 'https://github.com/Shougo/neocomplete.vim'
-    Plugin 'Shougo/deoplete.nvim'
-    Plugin 'roxma/nvim-yarp'
-    Plugin 'roxma/vim-hug-neovim-rpc'
-    Plugin 'vim-scripts/taglist.vim'
-    Plugin 'c9s/bufexplorer'
-    "Plugin 'https://github.com/fholgado/minibufexpl.vim'
-    Plugin 'chazy/cscope_maps'
-    "Plugin 'vim-scripts/TabBar'
-    Plugin 'ap/vim-buftabline'
-    Plugin 'vim-scripts/Gundo'
-    Plugin 'https://github.com/mhinz/vim-signify'
-    Plugin 'https://github.com/kien/ctrlp.vim'
-    Plugin 'https://github.com/easymotion/vim-easymotion'
-    Plugin 'junkblocker/patchreview-vim'
-    Plugin 'https://github.com/vim-scripts/gtags.vim'
-    Plugin 'nathanalderson/yang.vim'
+    "Plug 'https://github.com/tpope/vim-fugitive' 
+    Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    " Plug 'plasticboy/vim-markdown' 
+    " Plug 'vim-scripts/AutoComplPop' 
+    " Plug 'https://github.com/Shougo/neocomplete.vim'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'vim-scripts/taglist.vim'
+    Plug 'c9s/bufexplorer'
+    "Plug 'https://github.com/fholgado/minibufexpl.vim'
+    Plug 'chazy/cscope_maps'
+    "Plug 'vim-scripts/TabBar'
+    Plug 'ap/vim-buftabline'
+    Plug 'vim-scripts/Gundo'
+    Plug 'https://github.com/mhinz/vim-signify'
+    Plug 'https://github.com/kien/ctrlp.vim'
+    Plug 'https://github.com/easymotion/vim-easymotion'
+    Plug 'junkblocker/patchreview-vim'
+    "Plug 'https://github.com/vim-scripts/gtags.vim'
+    Plug 'nathanalderson/yang.vim'
     "codequery
-    Plugin 'Shougo/unite.vim'
-    Plugin 'devjoe/vim-codequery'
+    Plug 'Shougo/unite.vim'
+    Plug 'devjoe/vim-codequery'
     "jinja"
-    Plugin 'Glench/Vim-Jinja2-Syntax'
+    Plug 'Glench/Vim-Jinja2-Syntax'
     "fzf"
-    Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plugin 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
     "robotframwork"
-    Plugin 'mfukar/robotframework-vim'
-    "Plugin 'https://github.com/nvie/vim-flake8'
-    Plugin 'pearofducks/ansible-vim'
+    Plug 'mfukar/robotframework-vim'
+    "Plug 'https://github.com/nvie/vim-flake8'
+    Plug 'pearofducks/ansible-vim'
     "rust"
-    Plugin 'rust-lang/rust.vim'
+    Plug 'rust-lang/rust.vim'
     "...All your other bundles...
     if iCanHazVundle == 0
-        echo "Installing Vundles, please ignore key map error messages"
+        echo "Installing vim plugins, please ignore key map error messages"
         echo ""
-        :PluginInstall
+        :PlugInstall
     endif
 
-    call vundle#end()
-" Setting up Vundle - the vim plugin bundler end
+    call plug#end()
+" Setting up vim plugins - the vim plugin bundler end
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -400,6 +394,8 @@ let g:ctrlp_user_command = {
 " "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 let g:deoplete#enable_at_startup = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " Enable omni completion.
