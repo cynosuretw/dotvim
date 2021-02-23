@@ -60,6 +60,7 @@ export GOPATH=$HOME/code/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH=$PATH:~/.local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$PATH:$HOME/.cargo/bin:
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
