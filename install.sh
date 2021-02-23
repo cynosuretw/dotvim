@@ -1,11 +1,11 @@
 #!/bin/bash
 
 sudo apt install zsh tmux -y
-git clone https://github.com/cynosuretw/dotvim ~/.vim
+git clone https://github.com/cynosuretw/dotvim ~/dotvim
 
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/tmux.conf ~/.tmux.conf
-ln -s ~/.vim/zshrc ~/.zshrc
+ln -s ~/dotvim/vimrc ~/.vimrc
+ln -s ~/dotvim/tmux.conf ~/.tmux.conf
+ln -s ~/dotvim/zshrc ~/.zshrc
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
