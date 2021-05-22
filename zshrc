@@ -154,3 +154,8 @@ fi
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [[ `uname` == "Darwin" ]]; then
+    #source $ZSH_CUSTOM/os/mac.zsh
+    export PATH=$PATH:/Applications/VMware\ OVF\ Tool/
+fi
