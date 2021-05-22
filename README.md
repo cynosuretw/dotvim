@@ -12,6 +12,24 @@ MANUALLY INSTALL
         ln -s ~/.vim/vimrc ~/.vimrc 
         ln -s ~/.vim/tmux.conf ~/.tmux.conf
         ln -s ~/.vim/zshrc ~/.zshrc
+2.a (option), compile vim with python3, lua support
+   https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source
+   ```
+   apt install libncurses5-dev libgtk2.0-dev libatk1.0-dev \
+    libcairo2-dev libx11-dev libxpm-dev libxt-dev  \
+    python3-dev ruby-dev lua5.2 liblua5.2-dev libperl-dev git
+
+   ./configure --with-features=huge
+            --enable-multibyte
+            --enable-rubyinterp=yes
+            --enable-python3interp=yes
+            --with-python3-config-dir=$(python3-config --configdir)
+            --enable-perlinterp=yes
+            --enable-luainterp=yes
+            --enable-gui=gtk2
+            --enable-cscope
+            --prefix=/usr/local
+   ```
 
 3. Install plugin by Vundle, and lunch Vim 
 
