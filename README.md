@@ -45,6 +45,9 @@ MANUALLY INSTALL
 
         git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
         git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+#for powerlevel10k
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 
 6. Install pip package for vim deoplete.nvim
 
