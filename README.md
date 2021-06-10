@@ -31,5 +31,5 @@ MANUALLY INSTALL
 6. Install pip package for vim deoplete.nvim
 
         pip3 install autopep8
-        pip2 install pynvim
+        pip3 install pynvim
         pip3 install rstcheck #for reStructuredText
