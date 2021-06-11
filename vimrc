@@ -46,7 +46,7 @@ filetype off                   " required!
     Plug 'ap/vim-buftabline'
     Plug 'vim-scripts/Gundo'
     Plug 'https://github.com/mhinz/vim-signify'
-    Plug 'https://github.com/kien/ctrlp.vim'
+    " Plug 'https://github.com/kien/ctrlp.vim'
     Plug 'https://github.com/easymotion/vim-easymotion'
     Plug 'junkblocker/patchreview-vim'
     "Plug 'https://github.com/vim-scripts/gtags.vim'
@@ -57,8 +57,9 @@ filetype off                   " required!
     "jinja"
     Plug 'Glench/Vim-Jinja2-Syntax'
     "fzf"
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
+    " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    " Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     "robotframwork"
     Plug 'mfukar/robotframework-vim'
     "Plug 'https://github.com/nvie/vim-flake8'
@@ -328,16 +329,16 @@ nmap <Leader>ad :ALEDetail<CR>
 " Bind F8 to fixing problems with ALE
 nmap <F8> <Plug>(ale_fix)
 
-" ctrlP
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_user_command = {
-            \ 'types': {
-            \ 1: ['.git', 'cd %s && git ls-files -c -o --exclude-standard'],
-            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-            \ },
-            \ 'fallback': 'find %s -type f'
-            \ }
+" " ctrlP
+" let g:ctrlp_working_path_mode = 'ra'
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+" let g:ctrlp_user_command = {
+"             \ 'types': {
+"             \ 1: ['.git', 'cd %s && git ls-files -c -o --exclude-standard'],
+"             \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+"             \ },
+"             \ 'fallback': 'find %s -type f'
+"             \ }
 
 " "neocomplete
 " "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -436,3 +437,7 @@ nnoremap <Leader>bl :bnext<CR>
 nnoremap <F6> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
 
 nnoremap / ms/
+
+"fzf
+set rtp+=/.fzf/
+map <C-p> :FZF<CR>
