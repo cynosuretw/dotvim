@@ -317,6 +317,7 @@ let g:ale_set_signs = 1
 let g:ale_linters = {'python': ['flake8'], 'reStructuredText': ['rstcheck']}
 " Fix Python files with autopep8.
 let g:ale_fixers = {'python': ['remove_trailing_lines', 'trim_whitespace', 'autopep8']}
+let g:ale_python_flake8_options = '--max-line-length=120'
 " from http://0x3f.org/post/replace-syntastic-with-ale/
 " 普通模式下，sp前往上一個錯誤或警告，sn前往下一個錯誤或警告
 nmap sp <Plug>(ale_previous_wrap)
