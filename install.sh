@@ -6,6 +6,7 @@ git clone https://github.com/cynosuretw/dotvim ~/dotvim
 ln -s ~/dotvim/vimrc ~/.vimrc
 ln -s ~/dotvim/tmux.conf ~/.tmux.conf
 ln -s ~/dotvim/zshrc ~/.zshrc
+ln -s ~/dotvim/p10k.zsh ~/.p10k.zsh
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
