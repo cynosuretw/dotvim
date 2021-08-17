@@ -57,7 +57,7 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa alpha1-build
+zstyle :omz:plugins:ssh-agent identities id_rsa
 
 plugins=(git zsh-completions ssh-agent)
 autoload -U compinit && compinit
@@ -102,7 +102,6 @@ export SSH_KEY_PATH="~/.ssh/"
 unsetopt share_history
 alias au="!git add %(git ls-files -o --exclude-standard)"
 alias lu="git ls-files -o --exclude-standard"
-zstyle :omz:plugins:ssh-agent agent-forwarding on
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 export M2_HOME=/usr/share/maven
 export PATH=${M2_HOME}/bin:${PATH}
@@ -178,3 +177,6 @@ if [[ `uname` == "Darwin" ]]; then
     export PATH="/usr/local/opt/llvm@11/bin:$PATH"
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
+
+#docker rootless
+export DOCKER_HOST=unix:///run/user/$UID/docker.sock
