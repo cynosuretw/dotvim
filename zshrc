@@ -183,6 +183,8 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH=$PATH:~/.local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:$HOME/.cargo/bin
+# for python
+export PATH=$PATH:$HOME/.local/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -270,6 +272,9 @@ fi
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 if [[ `uname` == "Darwin" ]]; then
     #source $ZSH_CUSTOM/os/mac.zsh
