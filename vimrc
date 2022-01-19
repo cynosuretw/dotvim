@@ -67,6 +67,11 @@ filetype off                   " required!
     Plug 'pearofducks/ansible-vim'
     "rust"
     Plug 'rust-lang/rust.vim'
+    "layout"
+    "Rainbow Parentheses Improved"
+    Plug 'luochen1990/rainbow'
+    Plug 'Yggdroot/indentLine'
+    Plug 'ntpeters/vim-better-whitespace'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing vim plugins, please ignore key map error messages"
@@ -443,3 +448,6 @@ nnoremap / ms/
 "fzf
 set rtp+=/.fzf/
 map <C-p> :FZF<CR>
+
+"rainbow"
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
