@@ -12,11 +12,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-if [[ `uname` == "Darwin" ]]; then
-    ZSH_THEME="powerlevel10k/powerlevel10k"
-else
-    ZSH_THEME="robbyrussell"
-fi
+ZSH_THEME="powerlevel10k/powerlevel10k"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -171,8 +169,8 @@ if [[ `uname` == "Darwin" ]]; then
     #source $ZSH_CUSTOM/os/mac.zsh
     export PATH=$PATH:/Applications/VMware\ OVF\ Tool/
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-    typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+    # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
     export PATH="/usr/local/opt/llvm@11/bin:$PATH"
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
