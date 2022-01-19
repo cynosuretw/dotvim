@@ -5,13 +5,19 @@ MANUALLY INSTALL
 
 1. Check out from GitHub
 
+   ```
         git clone https://github.com/cynosuretw/dotvim ~/dotvim
+   ```
 
 2. Install ~/.vimrc ~/.tmux.conf ~/.zshrc
 
-        ln -s ~/.vim/vimrc ~/.vimrc 
-        ln -s ~/.vim/tmux.conf ~/.tmux.conf
-        ln -s ~/.vim/zshrc ~/.zshrc
+   ```
+        ln -s ~/dotvim/vimrc ~/.vimrc
+        ln -s ~/dotvim/tmux.conf ~/.tmux.conf
+        ln -s ~/dotvim/zshrc ~/.zshrc
+        ln -s ~/dotvim/zimrc ~/.zimrc
+   ```
+
 2.a (option), compile vim with python3, lua support
    https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source
    ```
@@ -41,12 +47,13 @@ MANUALLY INSTALL
         #tmux plug manager https://github.com/tmux-plugins/tpm
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-5. Install oh-my-zsh
+5. Install zim
 
-        git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-        git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
-#for powerlevel10k
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+   ```
+        curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+        zstyle ':zim' disable-version-check yes
+        zimfw install
+   ```
 
 
 6. Install pip package for vim deoplete.nvim
