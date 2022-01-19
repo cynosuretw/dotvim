@@ -96,6 +96,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # ------------------
 # Initialize modules
 # ------------------
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
   # Update static initialization script if it does not exist or it's outdated, before sourcing it
@@ -135,9 +136,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-<<<<<<< HEAD
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+#export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -146,8 +146,6 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-=======
->>>>>>> d586df1a99c9c4df903d9d34b164faa048c69d7a
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -183,7 +181,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-<<<<<<< HEAD
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -191,8 +188,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa
 
-=======
->>>>>>> d586df1a99c9c4df903d9d34b164faa048c69d7a
 plugins=(git zsh-completions ssh-agent)
 autoload -U compinit && compinit
 
@@ -310,9 +305,7 @@ if [[ `uname` == "Darwin" ]]; then
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
-<<<<<<< HEAD
 #docker rootless
 export DOCKER_HOST=unix:///run/user/$UID/docker.sock
-=======
+#poetry
 export PATH="$HOME/.poetry/bin:$PATH"
->>>>>>> d586df1a99c9c4df903d9d34b164faa048c69d7a
