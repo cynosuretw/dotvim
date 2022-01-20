@@ -301,6 +301,7 @@ if [[ `uname` == "Darwin" ]]; then
     # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
+    zstyle :omz:plugins:ssh-agent agent-forwarding off
     export PATH="/usr/local/opt/llvm@11/bin:$PATH"
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
