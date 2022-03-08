@@ -27,13 +27,13 @@ filetype off                   " required!
     " Plug 'w0rp/ale'
     Plug 'dense-analysis/ale'
     "T-H-E colorscheme
-    Plug 'altercation/vim-colors-solarized' 
-    "So awesome, it should be illegal 
-    "Plug 'https://github.com/tpope/vim-fugitive' 
+    Plug 'altercation/vim-colors-solarized'
+    "So awesome, it should be illegal
+    Plug 'https://github.com/tpope/vim-fugitive'
     Plug 'bling/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    " Plug 'plasticboy/vim-markdown' 
-    " Plug 'vim-scripts/AutoComplPop' 
+    " Plug 'plasticboy/vim-markdown'
+    " Plug 'vim-scripts/AutoComplPop'
     " Plug 'https://github.com/Shougo/neocomplete.vim'
     Plug 'Shougo/deoplete.nvim'
     Plug 'roxma/nvim-yarp'
