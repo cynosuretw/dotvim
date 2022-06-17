@@ -222,7 +222,7 @@ export EDITOR='vim'
 export SSH_KEY_PATH="~/.ssh/"
 
 
-unsetopt share_history
+setopt share_history
 alias au="!git add %(git ls-files -o --exclude-standard)"
 alias lu="git ls-files -o --exclude-standard"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
