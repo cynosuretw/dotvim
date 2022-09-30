@@ -27,10 +27,11 @@ filetype off                   " required!
     " Plug 'w0rp/ale'
     Plug 'dense-analysis/ale'
     "T-H-E colorscheme
-    Plug 'altercation/vim-colors-solarized'
-    "So awesome, it should be illegal
-    Plug 'https://github.com/tpope/vim-fugitive'
-    Plug 'bling/vim-airline'
+    Plug 'altercation/vim-colors-solarized' 
+    "So awesome, it should be illegal 
+    " Plug 'https://github.com/tpope/vim-fugitive' 
+    " Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     " Plug 'plasticboy/vim-markdown'
     " Plug 'vim-scripts/AutoComplPop'
@@ -182,7 +183,9 @@ set si
 if &listchars ==# 'eol:$'
     set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
     if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-        let &listchars = "tab:\u21e5,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
+        " let &listchars = "tab:\u21e5,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
+        let &listchars = "trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
+        " set listchars=tab:\\u21b5
     endif
 endif
 "Invisible character colors 
