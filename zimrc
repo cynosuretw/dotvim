@@ -43,3 +43,7 @@ zmodule zsh-users/zsh-history-substring-search
 # Theme
 #
 zmodule romkatv/powerlevel10k
+
+zmodule exa
+zmodule fzf
+zmodule ssh
